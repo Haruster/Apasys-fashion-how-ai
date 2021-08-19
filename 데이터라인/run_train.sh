@@ -1,0 +1,22 @@
+CUDA_VISIBLE_DEVICES="0" python3 ./main.py --mode train \
+                                     --in_file_trn_dialog ./data/ddata.wst.txt \
+                                     --in_file_fashion ./data/mdata.wst.txt \
+                                     --in_file_img_feats ./data/extracted_feat.json \
+                                     --subWordEmb_path ./sstm_v0p5_deploy/sstm_v4p49_np_final_n36134_d128_r_eng_upper.dat \
+                                     --model_path ./gAIa_model \
+                                     --mem_size 16 \
+                                     --key_size 300 \
+                                     --hops 3 \
+                                     --eval_node [6000,6000,6000,200][2000,2000] \
+                                     --epochs 10 \
+                                     --save_freq 1 \
+                                     --batch_size 100 \
+                                     --learning_rate 0.005 \
+                                     --max_grad_norm 20.0 \
+                                     --use_multimodal True \
+                                     --use_dropout True \
+                                     --zero_prob 0.5 \
+                                     --permutation_iteration 3 \
+                                     --num_augmentation 5 \
+                                     --corr_thres 0.7 \
+
